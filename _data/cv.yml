@@ -16,21 +16,22 @@
       year: 2022 - Today
       description:
         - Physics informed Artificial Intelligence.
-        - Generative Modelling.
+        - Generative Models.
     - title: Master of Science - Autonomous Systems
       institution: University of Stuttgart, Stuttgart, Germany
       year: 2019 - 2022
       description:
         - Focus on Robotics and A.I.
-        - Master thesis | "Targeted generation of necessary training data by generative neural networks." (<a href="https://www.github.com/BaumSebastian/ALVA">Github</a>)
-        - 2020 | Sensor fusion of stereo and color camera to enhance stereo camera image.
+        - Master thesis | "Targeted generation of necessary training data by generative neural networks" (<a href="https://www.github.com/BaumSebastian/ALVA">Github</a>).
         - 2021 | Research project theoretical evaluation of coverage metrics in area of neural networks (<a href="https://www.ias.uni-stuttgart.de/dokumente/2021_Test-der_Coverage_von_neuronalen_Netzen_um_Fehler_im_Netzverhalten_zu_erkennen.pdf">Report [GER]</a>).
+        - 2020 | Sensor fusion of stereo and color camera to enhance stereo camera image.
     - title: Bachelor of Engineering - Electrical Engineering
       institution: Baden-Wuerttemberg Cooperative State University (DHBW) Stuttgart, Stuttgart, Germany
       year: 2016 - 2019
       description:
-        - Focus on automation and data science
-        - First touch with robotics
+        - Focus on automation and data science.
+        - First touch with robotics.
+        - Aroused my scientific curiosity with first scientific projects.
 
 - title: Experience
   type: time_table
@@ -39,29 +40,30 @@
       institution: Robotic Development Festo SE & Co. KG
       year: 2019 - 2022
       description:
-        - Part of the Application and Simulation Team
-        - Simulation-based optimization of robotic tasks
-    - title: Hardware Engirneeurng
+        - Part of the "Application & Simulation" team.
+        - Simulation-based optimization of robotic tasks.
+        - API solutions for hard, high-frequency tasks.
+    - title: Hardware Engineering
       institution: SIEMENS AG Stuttgart
       year: 2016 - 2019
       description:
-        - Worked in Fiber Industry
-        - First data processing
+        - Worked in fiber industry.
+        - First data processing tasks.
 
 - title: Academic Interests
   type: nested_list
   contents:
   - title: Robotic
     items: 
-      - Optimized Path planning
-      - Autonomous teaching by interacting with the environment
+      - Optimized Path planning.
+      - Autonomous teaching by interacting with the environment.
   - title: Optimization
     items:
       - Leverage Optimization algorithms where possible.
-  - title: Artificial Intelligence
+  - title: Artificial Intelligence.
     items:
-      - Self Supervised Learning
-      - Latent Variable Energy Based Models
+      - Self Supervised Learning.
+      - Latent Variable Energy Based Models.
 
 - title: Other Interests
   type: list
