@@ -1,12 +1,9 @@
 - title: General Information
-  type: map
+  type: list
   contents:
-    - name: Full Name
-      value: Sebastian Baum
-    - name: Date of Birth
-      value: 13th February 1997
-    - name: Languages
-      value: German (native), English (C1), French (A1)
+    - Sebastian Baum
+    - Date of Birth  - 13th February 1997
+    - Languages     - German (native), English (C1), French (A1)
 
 - title: Education
   type: time_table
@@ -31,7 +28,7 @@
       description:
         - Focus on automation and data science.
         - First touch with robotics.
-        - Aroused my scientific curiosity with first scientific projects.
+        - Aroused my scientific curiosity with first scientific research.
 
 - title: Experience
   type: time_table
@@ -47,8 +44,8 @@
       institution: SIEMENS AG Stuttgart
       year: 2016 - 2019
       description:
-        - Worked in fiber industry.
-        - First data processing tasks.
+        - First data processing and automation research.
+        - Bachelor thesis| Development of an automated system for generating electrical circuit plans based on sales offers.
 
 - title: Academic Interests
   type: nested_list
@@ -59,7 +56,7 @@
       - Autonomous teaching by interacting with the environment.
   - title: Optimization
     items:
-      - Leverage Optimization algorithms where possible.
+      - Metaheuristic algorithms like Ant Colony Optimization
   - title: Artificial Intelligence.
     items:
       - Self Supervised Learning.
