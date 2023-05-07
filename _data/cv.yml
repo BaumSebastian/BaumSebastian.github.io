@@ -1,9 +1,12 @@
 - title: General Information
-  type: list
+  type: time_table
   contents:
-    - Sebastian Baum
-    - Date of Birth  - 13th February 1997
-    - Languages     - German (native), English (C1), French (A1)
+    - title: Sebastian Baum
+      year: Full Name
+    - title: 13th February 1997
+      year: Date of Birth
+    - title: German (native), English (C1), French (A1)
+      year: Languages
 
 - title: Education
   type: time_table
