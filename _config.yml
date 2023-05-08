@@ -121,9 +121,9 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Optimization and Planning # blog_name will be displayed in your blog page
-blog_nav_title: # blog # your blog must have a title for it to be displayed in the nav bar
-blog_description: Everything about optimization and planning algorithms
+blog_name: Smart Scape # blog_name will be displayed in your blog page
+blog_nav_title: Blog # blog # your blog must have a title for it to be displayed in the nav bar
+blog_description: The Enchanted Path of Robotic, Optimization and A.I. - A Journey into the Realm of Smart Machines. I blog about anything related to robotics, optimization and artifical intelligence
 permalink: /blog/:year/:title/
 
 # Pagination
