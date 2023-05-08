@@ -10,10 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>code | Sebastian  Baum</title>
+    <title>Projects | Sebastian  Baum</title>
     <meta name="author" content="Sebastian  Baum">
-    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-">
+    <meta name="description" content="Collection of my public projects.">
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
 
 
@@ -39,7 +38,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://baumsebastian.github.io/blog/tag/code/">
+    <link rel="canonical" href="https://baumsebastian.github.io/projects/">
 
     <!-- Dark Mode -->
     
@@ -82,8 +81,8 @@
               <li class="nav-item ">
                 <a class="nav-link" href="/publications/">Publications</a>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/projects/">Projects</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="/projects/">Projects<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="/cv/">CV</a>
@@ -113,29 +112,61 @@
     <!-- Content -->
     <div class="container mt-5">
       
+        <!-- page.html -->
         <div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title"> <i class="fas fa-hashtag fa-sm"></i> code </h1>
-    <p class="post-description"> an archive of posts with this tag </p>
-  </header>
+          <header class="post-header">
+            <h1 class="post-title">Projects</h1>
+            <p class="post-description">Collection of my public projects.</p>
+          </header>
 
-  <article>
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-        
-        <tr>
-          <th scope="row">Jul 15, 2015</th>
-          <td>
-              <a class="post-link" href="/blog/2015/code/">a post with code</a>
-          </td>
-        </tr>
-      
-      </table>
-    </div>
-  </article>
+          <article>
+            <!-- pages/projects.md -->
+<div class="projects">
+  <!-- Display categorized projects -->
+  <h2 class="category">work</h2>
+  <!-- Generate cards for each project -->
+  <div class="grid">
+<!-- _includes/projects.html -->
+<div class="grid-sizer"></div>
+<div class="grid-item">
+  <a href="https://github.com/BaumSebastian/ALVA" rel="external nofollow noopener" target="_blank">
+      <div class="card hoverable">
+<figure>
 
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/projects/alva/thumbnail-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/projects/alva/thumbnail-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/projects/alva/thumbnail-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/projects/alva/thumbnail.png" width="auto" height="auto" alt="project thumbnail" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+        <div class="card-body">
+          <h2 class="card-title text-lowercase">ALVA</h2>
+          <p class="card-text">A novel data augmentation method to generate new unseen data.</p>
+          <div class="row ml-1 mr-1 p-0">
+          </div>
+        </div>
+      </div>
+    </a>
 </div>
+  </div>
+  <h2 class="category">fun</h2>
+  <!-- Generate cards for each project -->
+  <div class="grid">
+  </div>
+</div>
+
+          </article>
+
+        </div>
 
       
     </div>
