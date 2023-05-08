@@ -10,9 +10,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>displaying beatiful tables with Bootstrap Tables | Sebastian  Baum</title>
+    <title>Learning to Extrapolate - A Transductive Approach | Sebastian  Baum</title>
     <meta name="author" content="Sebastian  Baum">
-    <meta name="description" content="an example of how to use Bootstrap Tables">
+    <meta name="description" content="Machine learning systems often fail to make predictions on out-of-support data, even when it has significant structure. &lt;a href=" https:>
+</head>
+<body>
+<u>Aviv Netanyahu'</u> ICLR23 paper proposes a method for learning predictors that extrapolate without making domain-specific assumptions." /&gt;
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
 
 
@@ -32,13 +35,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
 
     
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    
 
     <!-- Styles -->
     
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://baumsebastian.github.io/blog/2023/tables/">
+    <link rel="canonical" href="https://baumsebastian.github.io/blog/2023/Learning-to-Extrapolate-I/">
 
     <!-- Dark Mode -->
     
@@ -48,10 +54,10 @@
     <script src="/assets/js/dark_mode.js"></script>
     
 
-  </head>
+  
 
   <!-- Body -->
-  <body class="fixed-top-nav ">
+  
 
     <!-- Header -->
     <header>
@@ -116,18 +122,34 @@
     <!-- Content -->
     <div class="container mt-5">
       
-        <!-- _layouts/post.html -->
+        
+        <div class="row">
+          <!-- sidebar, which will move to the top on a small screen -->
+          <div class="col-sm-3">
+            <nav id="toc-sidebar" class="sticky-top"></nav>
+          </div>
+          <!-- main content area -->
+          <div class="col-sm-9">
+            <!-- _layouts/post.html -->
 
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">displaying beatiful tables with Bootstrap Tables</h1>
-    <p class="post-meta">March 20, 2023</p>
+    <h1 class="post-title">Learning to Extrapolate - A Transductive Approach</h1>
+    <p class="post-meta">May 8, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
-        <a href="/blog/category/sample-posts">
-          <i class="fas fa-tag fa-sm"></i> sample-posts</a>  
+        <a href="/blog/tag/paper">
+          <i class="fas fa-hashtag fa-sm"></i> paper</a>  
+          <a href="/blog/tag/a-i">
+          <i class="fas fa-hashtag fa-sm"></i> A.I.</a>  
+          <a href="/blog/tag/math">
+          <i class="fas fa-hashtag fa-sm"></i> math</a>  
+          
+        ·  
+        <a href="/blog/category/paper">
+          <i class="fas fa-tag fa-sm"></i> paper</a>  
           
 
     </p>
@@ -136,150 +158,53 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p>Using markdown to display tables is easy. Just use the following syntax:</p>
+      <h1 id="announcement">Announcement</h1>
+<div class="jekyll-twitter-plugin">
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">Machine learning systems often fail to make predictions on out-of-support data, even when it has significant structure. Our <a href="https://twitter.com/hashtag/ICLR23?src=hash&amp;ref_src=twsrc%5Etfw" rel="external nofollow noopener" target="_blank">#ICLR23</a> paper proposes a method for learning predictors that extrapolate without making domain-specific assumptions.<a href="https://t.co/iOgiF2yW7h" rel="external nofollow noopener" target="_blank">https://t.co/iOgiF2yW7h</a> <a href="https://t.co/sG9n5RkT1t" rel="external nofollow noopener" target="_blank">pic.twitter.com/sG9n5RkT1t</a></p>— Aviv Netanyahu (@avivnet) <a href="https://twitter.com/avivnet/status/1652874921859481600?ref_src=twsrc%5Etfw" rel="external nofollow noopener" target="_blank">May 1, 2023</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Left aligned | Center aligned | Right aligned |
-| :----------- | :------------: | ------------: |
-| Left 1       | center 1       | right 1       |
-| Left 2       | center 2       | right 2       |
-| Left 3       | center 3       | right 3       |
-</code></pre></div></div>
+<h1 id="abstract">Abstract</h1>
+<p>Machine learning systems, especially with overparameterized deep neural networks, 
+can generalize to novel test instances drawn from the same distribution as 
+the training data. However, they fare poorly when evaluated on out-of-support
+test points. In this work, we tackle the problem of developing machine learning 
+systems that retain the power of overparameterized function approximators
+while enabling extrapolation to out-of-support test points when possible. This
+is accomplished by noting that under certain conditions, a “transductive” 
+reparameterization can convert an out-of-support extrapolation problem into a 
+problem of within-support combinatorial generalization. We propose a simple strategy
+based on bilinear embeddings to enable this type of combinatorial generalization,
+thereby addressing the out-of-support extrapolation problem under certain conditions. 
+We instantiate a simple, practical algorithm applicable to various supervised
+learning and imitation learning tasks.</p>
 
-<p>That will generate:</p>
+<h2 id="adding-a-table-of-contents">Adding a Table of Contents</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Left aligned</th>
-      <th style="text-align: center">Center aligned</th>
-      <th style="text-align: right">Right aligned</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Left 1</td>
-      <td style="text-align: center">center 1</td>
-      <td style="text-align: right">right 1</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Left 2</td>
-      <td style="text-align: center">center 2</td>
-      <td style="text-align: right">right 2</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Left 3</td>
-      <td style="text-align: center">center 3</td>
-      <td style="text-align: right">right 3</td>
-    </tr>
-  </tbody>
-</table>
+<h3 id="example-of-sub-heading-1">Example of Sub-Heading 1</h3>
 
-<p></p>
+<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com" rel="external nofollow noopener" target="_blank">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice" rel="external nofollow noopener" target="_blank">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>
 
-<p>It is also possible to use HTML to display tables. For example, the following HTML code will display a table with <a href="https://bootstrap-table.com/" rel="external nofollow noopener" target="_blank">Bootstrap Table</a>, loaded from a JSON file:</p>
+<h3 id="example-of-another-sub-heading-1">Example of another Sub-Heading 1</h3>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span>
-  <span class="na">id=</span><span class="s">"table"</span>
-  <span class="na">data-toggle=</span><span class="s">"table"</span>
-  <span class="na">data-url=</span><span class="s">"{{ '/assets/json/table_data.json' | relative_url }}"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;thead&gt;</span>
-    <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"id"</span><span class="nt">&gt;</span>ID<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"name"</span><span class="nt">&gt;</span>Item Name<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"price"</span><span class="nt">&gt;</span>Item Price<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;/thead&gt;</span>
-<span class="nt">&lt;/table&gt;</span>
-</code></pre></div></div>
+<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com" rel="external nofollow noopener" target="_blank">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice" rel="external nofollow noopener" target="_blank">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>
 
-<table data-toggle="table" data-url="/assets/json/table_data.json">
-  <thead>
-    <tr>
-      <th data-field="id">ID</th>
-      <th data-field="name">Item Name</th>
-      <th data-field="price">Item Price</th>
-    </tr>
-  </thead>
-</table>
+<h2 data-toc-text="Customizing" id="customizing-your-table-of-contents">Customizing Your Table of Contents</h2>
 
-<p></p>
+<p>If you want to learn more about how to customize the table of contents of your sidebar, you can check the <a href="https://afeld.github.io/bootstrap-toc/" rel="external nofollow noopener" target="_blank">bootstrap-toc</a> documentation. Notice that you can even customize the text of the heading that will be displayed on the sidebar.</p>
 
-<p>By using <a href="https://bootstrap-table.com/" rel="external nofollow noopener" target="_blank">Bootstrap Table</a> it is possible to create pretty complex tables, with pagination, search, and more. For example, the following HTML code will display a table, loaded from a JSON file, with pagination, search, checkboxes, and header/content alignment. For more information, check the <a href="https://examples.bootstrap-table.com/index.html" rel="external nofollow noopener" target="_blank">documentation</a>.</p>
+<h3 id="example-of-sub-heading-2">Example of Sub-Heading 2</h3>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span>
-  <span class="na">data-click-to-select=</span><span class="s">"true"</span>
-  <span class="na">data-height=</span><span class="s">"460"</span>
-  <span class="na">data-pagination=</span><span class="s">"true"</span>
-  <span class="na">data-search=</span><span class="s">"true"</span>
-  <span class="na">data-toggle=</span><span class="s">"table"</span>
-  <span class="na">data-url=</span><span class="s">"{{ '/assets/json/table_data.json' | relative_url }}"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;thead&gt;</span>
-    <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-checkbox=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"id"</span> <span class="na">data-halign=</span><span class="s">"left"</span> <span class="na">data-align=</span><span class="s">"center"</span> <span class="na">data-sortable=</span><span class="s">"true"</span><span class="nt">&gt;</span>ID<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"name"</span> <span class="na">data-halign=</span><span class="s">"center"</span> <span class="na">data-align=</span><span class="s">"right"</span> <span class="na">data-sortable=</span><span class="s">"true"</span><span class="nt">&gt;</span>Item Name<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">data-field=</span><span class="s">"price"</span> <span class="na">data-halign=</span><span class="s">"right"</span> <span class="na">data-align=</span><span class="s">"left"</span> <span class="na">data-sortable=</span><span class="s">"true"</span><span class="nt">&gt;</span>Item Price<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;/thead&gt;</span>
-<span class="nt">&lt;/table&gt;</span>
-</code></pre></div></div>
+<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com" rel="external nofollow noopener" target="_blank">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice" rel="external nofollow noopener" target="_blank">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>
 
-<table data-click-to-select="true" data-height="460" data-pagination="true" data-search="true" data-toggle="table" data-url="/assets/json/table_data.json">
-  <thead>
-    <tr>
-      <th data-checkbox="true"></th>
-      <th data-field="id" data-halign="left" data-align="center" data-sortable="true">ID</th>
-      <th data-field="name" data-halign="center" data-align="right" data-sortable="true">Item Name</th>
-      <th data-field="price" data-halign="right" data-align="left" data-sortable="true">Item Price</th>
-    </tr>
-  </thead>
-</table>
+<h3 id="example-of-another-sub-heading-2">Example of another Sub-Heading 2</h3>
+
+<p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com" rel="external nofollow noopener" target="_blank">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice" rel="external nofollow noopener" target="_blank">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>
 
     </div>
-  </article>
-
-
-  
-    
-    <br>
-    <hr>
-    <br>
-    <ul class="list-disc pl-8"></ul>
-
-    <!-- Adds related posts to the end of an article -->
-    <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2>
-    <p class="mb-2">Here are some more articles you might like to read next:</p>
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/displaying-external-posts-on-your-al-folio-blog/">Displaying External Posts on Your al-folio Blog</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/sidebar-table-of-contents/">a post with table of contents on a sidebar</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/table-of-contents/">a post with table of contents</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/giscus-comments/">a post with giscus comments</a>
-  </li>
-
-  
-
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/redirect/">a post with redirect</a>
-  </li>
-
-<div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+  </article><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
   <script>
     let giscusTheme = localStorage.getItem("theme");
     let giscusAttributes = {
@@ -309,6 +234,9 @@
 </div>
 </div>
 
+          </div>
+        </div>
+        
       
     </div>
 
@@ -336,6 +264,9 @@
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
 
   <!-- Bootstrap Table -->
   <script defer src="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.js"></script>
@@ -440,5 +371,6 @@
   }
 </script>
 
-  </body>
+  
+</body>
 </html>
