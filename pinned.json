@@ -1,10 +1,13 @@
 [
   {
     "repo": "BaumSebastian/DDACS",
-    "icon": "https://raw.githubusercontent.com/BaumSebastian/DDACS/main/docs/images/icon/DDACS.png"
+    "icon": "https://raw.githubusercontent.com/BaumSebastian/BaumSebastian.github.io/refs/heads/main/icons/ddacs.png"
   },
   {
     "repo": "BaumSebastian/RDDAC",
-    "icon": "https://raw.githubusercontent.com/BaumSebastian/RDDAC/main/docs/images/icon/icon.png"
-  }
+    "icon": "https://raw.githubusercontent.com/BaumSebastian/BaumSebastian.github.io/refs/heads/main/icons/rddac.png"
+  },
+  {
+    "repo": "BaumSebastian/Obisidan-Templates"
+    "icon": "https://raw.githubusercontent.com/BaumSebastian/BaumSebastian.github.io/refs/heads/main/icons/obsidian.png"
 ]
