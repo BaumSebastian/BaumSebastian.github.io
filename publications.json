@@ -1,0 +1,69 @@
+{
+  "source": "ORCID",
+  "updated": "2026-07-14T12:23:58+00:00",
+  "publications": [
+    {
+      "title": "Statistical Analysis of Simulation-to-Reality Deviation in Deep Drawing with a Benchmark Dataset",
+      "authors": "Sebastian Baum, Pascal Heinzelmann, Philipp Clauß, Mathias Liewald, Michael Weyrich",
+      "venue": "Transactions of the Indian Institute of Metals",
+      "year": 2026,
+      "url": "https://doi.org/10.1007/s12666-026-03870-5"
+    },
+    {
+      "title": "Addressing Discrepancies between Synthetic and Real-World Data of Deep-Drawing Manufacturing Systems in AI Applications",
+      "authors": "S. Baum, P. Heinzelmann, M. Liewald, M. Weyrich",
+      "venue": "Procedia CIRP",
+      "year": 2026,
+      "url": "https://doi.org/10.1016/j.procir.2026.01.125"
+    },
+    {
+      "title": "A Data-Driven Surrogate Model for Predicting Springback in Deep Drawing Processes",
+      "authors": "Pascal Heinzelmann, Sebastian Baum, Kim Rouven Riedmüller, Mathias Liewald, Michael Weyrich",
+      "venue": "Journal of Physics: Conference Series",
+      "year": 2025,
+      "url": "https://doi.org/10.1088/1742-6596/3104/1/012060"
+    },
+    {
+      "title": "A Comprehensive Benchmark Dataset for Sheet Metal Forming: Advancing Machine Learning and Surrogate Modelling in Process Simulations",
+      "authors": "Pascal Heinzelmann, Sebastian Baum, Kim Rouven Riedmüller, Mathias Liewald, Michael Weyrich",
+      "venue": "44TH CONFERENCE OF THE INTERNATIONAL DEEP DRAWING RESEARCH GROUP, IDDRG 2025",
+      "year": 2025,
+      "url": "https://doi.org/10.1051/MATECCONF/202540801090"
+    },
+    {
+      "title": "Deep Drawing and Cutting Simulations Dataset",
+      "authors": null,
+      "venue": null,
+      "year": 2025,
+      "url": "https://doi.org/10.18419/DARUS-4801"
+    },
+    {
+      "title": "Enhancing FEA sheet metal forming simulations through 3D geometric data-driven surrogate modeling",
+      "authors": "Sebastian Baum, Pascal Heinzelmann, Mathias Liewald, Michael Weyrich",
+      "venue": "AT-AUTOMATISIERUNGSTECHNIK",
+      "year": 2025,
+      "url": "https://doi.org/10.1515/AUTO-2024-0116"
+    },
+    {
+      "title": "Automating Software Product Line Adoption Based on Feature Models Using Large Language Models",
+      "authors": "Johannes Stümpfle, Sebastian Baum, Daniel Dittler, Nasser Jazdi, Michael Weyrich",
+      "venue": "2024 IEEE 29TH INTERNATIONAL CONFERENCE ON EMERGING TECHNOLOGIES AND FACTORY AUTOMATION, ETFA 2024",
+      "year": 2024,
+      "url": "https://doi.org/10.1109/ETFA61755.2024.10710832"
+    },
+    {
+      "title": "Synthetic Data Generation for improving Deep Learning-based 5G Indoor Positioning",
+      "authors": "Hannes Vietz, Manuel Hirth, Sebastian Baum, Michael Weyrich",
+      "venue": "2023 IEEE 28th International Conference on Emerging Technologies and Factory Automation (ETFA)",
+      "year": 2023,
+      "url": "https://doi.org/10.1109/etfa54631.2023.10275437"
+    },
+    {
+      "title": "5G Indoor Positioning for Manufacturing using Convolutional Neural Networks",
+      "authors": "Hannes Vietz, Hamza Ben Haj Ammar, Sebastian Baum, Nasser Jazdi, Michael Weyrich",
+      "venue": "Procedia CIRP",
+      "year": 2023,
+      "url": "https://doi.org/10.1016/j.procir.2023.09.147"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebastian Baum</title>
+  <meta name="description" content="Sebastian Baum — PhD candidate at the University of Stuttgart. Machine learning for manufacturing, open datasets, and code.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>SB</text></svg>">
+  <script>
+    // Apply saved theme before first paint to avoid a flash. Default: dark.
+    const saved = localStorage.getItem("theme");
+    document.documentElement.dataset.theme = saved === "light" ? "light" : "dark";
+  </script>
+</head>
+<body>
+  <nav id="toc" aria-label="Section index">
+    <a href="#about">about</a>
+    <a href="#repos">repositories</a>
+    <a href="#attendances">attendances</a>
+    <a href="#publications">publications</a>
+  </nav>
+  <main>
+
+    <button id="theme-toggle" aria-label="Toggle dark/light theme">dark</button>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="about-grid">
+        <img class="avatar" src="profile.jpg" alt="Portrait of Sebastian Baum">
+        <div class="about-text">
+          <h1>Sebastian Baum</h1>
+          <p class="role">PhD Candidate · University of Stuttgart</p>
+          <p class="bio">
+            I work on machine learning for manufacturing, with a focus on
+            deep drawing processes. I build open datasets and tools that make
+            manufacturing research reproducible and accessible.<br>
+            Looking for FAIR data.<br>
+            Enjoying geometric deep learning and surrogate modelling.
+          </p>
+          <p class="links" id="contact-links"><!-- filled by main.js --></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REPOSITORIES ============ -->
+    <section id="repos">
+      <h2>Repositories</h2>
+      <div class="repo-list" id="repo-list">
+        <p class="muted small">loading…</p>
+      </div>
+    </section>
+
+    <!-- ============ ATTENDANCES ============ -->
+    <section id="attendances">
+      <h2>Attendances</h2>
+      <ol class="pub-list" id="attendance-list">
+        <li class="muted small">loading…</li>
+      </ol>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <p class="muted small" id="pub-meta">loading…</p>
+      <ol class="pub-list" id="pub-list"></ol>
+    </section>
+
+    <footer>
+      <p class="muted small">
+        static html · publications refresh weekly via github actions ·
+        <a id="source-link" href="#">source</a>
+      </p>
+    </footer>
+
+  </main>
+  <script src="main.js?v=2"></script>
+</body>
+</html>

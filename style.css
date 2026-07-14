@@ -1,0 +1,191 @@
+/* ---------- theme ---------- */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --fg: #241f33;
+  --muted: #6f6885;
+  --accent: #6d28d9;
+  --border: #e5e0f0;
+  --card: #faf9fd;
+}
+
+:root[data-theme="dark"] {
+  --bg: #141218;
+  --fg: #e8e4f2;
+  --muted: #8f87a3;
+  --accent: #a78bfa;
+  --border: #2b2637;
+  --card: #1a1721;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Consolas, "Cascadia Code", Menlo, monospace;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.2rem 3rem;
+  position: relative;
+}
+
+section { margin-bottom: 2.8rem; }
+
+h1 {
+  margin: 0 0 0.2rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.05rem 0.35rem;
+  font-size: 0.9em;
+}
+
+/* ---------- left index ---------- */
+#toc {
+  position: fixed;
+  top: 3.4rem;
+  /* sit to the left of the centered 720px column */
+  left: calc(50% - 360px - 170px);
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+#toc a { color: var(--muted); }
+#toc a:hover { color: var(--accent); text-decoration: none; }
+#toc a.active {
+  color: var(--accent);
+  border-left: 2px solid var(--accent);
+  padding-left: 0.5rem;
+  margin-left: -0.6rem;
+}
+
+/* hide the index when there is no room for it */
+@media (max-width: 1120px) {
+  #toc { display: none; }
+}
+
+/* ---------- theme toggle ---------- */
+#theme-toggle {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.2rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  cursor: pointer;
+}
+#theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- about ---------- */
+.about-grid {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+.about-text { flex: 1; min-width: 260px; }
+.role { margin: 0 0 0.7rem; color: var(--muted); }
+.bio { margin: 0 0 0.8rem; }
+.links a {
+  margin-right: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.icon { width: 1em; height: 1em; fill: currentColor; }
+
+/* ---------- publications ---------- */
+.pub-list { list-style: none; margin: 0; padding: 0; }
+.pub-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.pub-list li:last-child { border-bottom: none; }
+.pub-text { flex: 1; min-width: 0; }
+.pub-image {
+  width: 110px;
+  max-height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.pub-title { color: var(--fg); }
+.pub-title[href]:hover { color: var(--accent); }
+.pub-detail { color: var(--muted); font-size: 0.85rem; display: block; }
+.pub-year { color: var(--accent); }
+
+/* ---------- repos ---------- */
+.repo-list { display: grid; gap: 0.7rem; }
+.repo-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  background: var(--card);
+  display: flex;
+  gap: 1rem;
+}
+.repo-card:hover { border-color: var(--accent); }
+.repo-main { flex: 1; min-width: 0; }
+.repo-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.repo-icon { width: 64px; height: 64px; border-radius: 8px; object-fit: contain; }
+.repo-name { font-weight: 700; }
+.repo-desc { color: var(--muted); font-size: 0.85rem; margin: 0.25rem 0 0.35rem; }
+.repo-update { font-size: 0.85rem; margin: 0; }
+.repo-update .when { color: var(--muted); }
+.stars { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+
+/* ---------- misc ---------- */
+.muted { color: var(--muted); }
+.small { font-size: 0.85rem; }
+
+footer { border-top: 1px solid var(--border); padding-top: 1rem; }
+
+@media (max-width: 520px) {
+  main { padding: 2rem 1rem; }
+  .about-grid { justify-content: center; text-align: center; }
+}
