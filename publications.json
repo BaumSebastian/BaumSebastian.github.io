@@ -1,6 +1,6 @@
 {
   "source": "ORCID",
-  "updated": "2026-07-14T12:37:26+00:00",
+  "updated": "2026-07-20T08:50:32+00:00",
   "publications": [
     {
       "title": "Statistical Analysis of Simulation-to-Reality Deviation in Deep Drawing with a Benchmark Dataset",
@@ -53,14 +53,14 @@
     },
     {
       "title": "Synthetic Data Generation for improving Deep Learning-based 5G Indoor Positioning",
-      "authors": "Hannes Vietz, Manuel Hirth, Sebastian Baum, Michael Weyrich",
+      "authors": null,
       "venue": "2023 IEEE 28th International Conference on Emerging Technologies and Factory Automation (ETFA)",
       "year": 2023,
       "url": "https://doi.org/10.1109/etfa54631.2023.10275437"
     },
     {
       "title": "5G Indoor Positioning for Manufacturing using Convolutional Neural Networks",
-      "authors": "Hannes Vietz, Hamza Ben Haj Ammar, Sebastian Baum, Nasser Jazdi, Michael Weyrich",
+      "authors": null,
       "venue": "Procedia CIRP",
       "year": 2023,
       "url": "https://doi.org/10.1016/j.procir.2023.09.147"
