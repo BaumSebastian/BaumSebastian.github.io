@@ -179,6 +179,35 @@ code {
 .repo-update .when { color: var(--muted); }
 .stars { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
 
+/* ---------- blog post page ---------- */
+.post h1 { font-size: 1.5rem; color: var(--accent); margin: 0.4rem 0 1rem; }
+.post h2 { border-bottom: none; margin-top: 1.8rem; }
+.post h3 { font-size: 0.95rem; color: var(--accent); }
+.post img { max-width: 100%; border-radius: 6px; }
+.post pre {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  overflow-x: auto;
+}
+.post pre code { background: none; border: none; padding: 0; }
+.post blockquote {
+  margin: 1rem 0;
+  padding: 0.1rem 1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+.post table { border-collapse: collapse; }
+.post th, .post td { border: 1px solid var(--border); padding: 0.3rem 0.7rem; }
+.post pre.mermaid {
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+.post .katex-display { overflow-x: auto; overflow-y: hidden; padding: 0.2rem 0; }
+
 /* ---------- misc ---------- */
 .muted { color: var(--muted); }
 .small { font-size: 0.85rem; }

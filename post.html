@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebastian Baum</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>SB</text></svg>">
+  <script>
+    // Apply saved theme before first paint to avoid a flash. Default: dark.
+    const saved = localStorage.getItem("theme");
+    document.documentElement.dataset.theme = saved === "light" ? "light" : "dark";
+  </script>
+</head>
+<body>
+  <main>
+    <button id="theme-toggle" aria-label="Toggle dark/light theme">dark</button>
+    <p class="small"><a href="./#blog">← back</a></p>
+    <p class="muted small" id="post-meta"></p>
+    <article class="post" id="post-content">loading…</article>
+    <footer>
+      <p class="muted small"><a href="./">baumsebastian.github.io</a></p>
+    </footer>
+  </main>
+  <script src="marked.min.js"></script>
+  <script>
+    // Theme toggle (same behavior as the main page).
+    const toggleBtn = document.getElementById("theme-toggle");
+    function syncToggleLabel() {
+      toggleBtn.textContent = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    }
+    toggleBtn.addEventListener("click", () => {
+      const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem("theme", next);
+      syncToggleLabel();
+      document.dispatchEvent(new CustomEvent("themechange"));
+    });
+    syncToggleLabel();
+
+    (async () => {
+      const contentEl = document.getElementById("post-content");
+      const slug = new URLSearchParams(location.search).get("p");
+      try {
+        const posts = await (await fetch("posts.json", { cache: "no-cache" })).json();
+        const post = posts.find((p) => p.slug === slug);
+        if (!post) throw new Error("post not found");
+        document.title = `${post.title} — Sebastian Baum`;
+        document.getElementById("post-meta").textContent = post.date;
+        let md = await (await fetch(`posts/${post.slug}.md`, { cache: "no-cache" })).text();
+
+        // Pull $...$ / $$...$$ math out before markdown parsing (so marked
+        // doesn't mangle TeX), skipping code fences and inline code.
+        const math = [];
+        md = md.split(/(```[\s\S]*?```|`[^`\n]*`)/g).map((part) => {
+          if (part.startsWith("`")) return part;
+          return part
+            .replace(/\$\$([\s\S]+?)\$\$/g, (m, tex) => `%%MATH${math.push({ tex, display: true }) - 1}%%`)
+            .replace(/\$([^\n$]+?)\$/g, (m, tex) => `%%MATH${math.push({ tex, display: false }) - 1}%%`);
+        }).join("");
+
+        let html = marked.parse(md);
+
+        // KaTeX, loaded on demand only if the post contains math.
+        if (math.length) {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css";
+          document.head.appendChild(link);
+          await new Promise((res, rej) => {
+            const s = document.createElement("script");
+            s.src = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js";
+            s.onload = res;
+            s.onerror = () => rej(new Error("could not load KaTeX"));
+            document.head.appendChild(s);
+          });
+          html = html.replace(/%%MATH(\d+)%%/g, (m, i) => {
+            const { tex, display } = math[+i];
+            return katex.renderToString(tex, { displayMode: display, throwOnError: false });
+          });
+        }
+
+        contentEl.innerHTML = html;
+
+        // Mermaid: render ```mermaid fences as diagrams, on demand.
+        // Diagrams bake the theme into their SVG, so re-render on toggle.
+        const mermaidCodes = contentEl.querySelectorAll("code.language-mermaid");
+        if (mermaidCodes.length) {
+          const diagrams = [];
+          for (const code of mermaidCodes) {
+            const pre = document.createElement("pre");
+            pre.className = "mermaid";
+            diagrams.push({ node: pre, code: code.textContent });
+            code.closest("pre").replaceWith(pre);
+          }
+          const { default: mermaid } = await import(
+            "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"
+          );
+          async function renderDiagrams() {
+            for (const d of diagrams) {
+              d.node.removeAttribute("data-processed");
+              d.node.textContent = d.code;
+            }
+            mermaid.initialize({
+              startOnLoad: false,
+              theme: document.documentElement.dataset.theme === "dark" ? "dark" : "neutral",
+            });
+            await mermaid.run({ nodes: diagrams.map((d) => d.node) });
+          }
+          await renderDiagrams();
+          document.addEventListener("themechange", renderDiagrams);
+        }
+      } catch (err) {
+        contentEl.textContent = `could not load this post (${err.message})`;
+      }
+    })();
+  </script>
+</body>
+</html>

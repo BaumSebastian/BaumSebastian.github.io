@@ -14,6 +14,11 @@ My personal website. Plain HTML/CSS/JS, no build step, hosted on GitHub Pages.
   ORCID record by `.github/workflows/publications.yml`, so don't edit it by
   hand except to add an `"image": "..."` to an entry (images survive the
   regeneration). New paper? Add it to ORCID and it shows up by itself.
+- **Blog posts** are markdown files in `posts/` — copy an existing one, then
+  add a line to `posts.json` (slug = filename without `.md`). Rendered in the
+  browser by `post.html` using the vendored `marked.min.js`. Images go in
+  `posts/images/` and are referenced root-relative:
+  `![alt](posts/images/foo.png)`.
 - **Profile picture** is `profile.jpg`.
 - **Colors & fonts** are CSS variables at the top of `style.css`.
 

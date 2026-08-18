@@ -48,6 +48,14 @@ function el(tag, cls, text) {
   return e;
 }
 
+/* Hide a whole section (and its toc link) when it has nothing to show. */
+function hideSection(id) {
+  const section = document.getElementById(id);
+  if (section) section.style.display = "none";
+  const tocLink = document.querySelector(`#toc a[href="#${id}"]`);
+  if (tocLink) tocLink.style.display = "none";
+}
+
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -104,7 +112,7 @@ async function renderPublications() {
     const pubs = (data.publications || []).sort((a, b) => (b.year || 0) - (a.year || 0));
 
     if (!pubs.length) {
-      meta.textContent = "no publications found — check the fetch action logs";
+      hideSection("publications");
       return;
     }
     meta.textContent = data.updated
@@ -138,8 +146,8 @@ async function renderPublications() {
       }
       list.appendChild(li);
     }
-  } catch (err) {
-    meta.textContent = `could not load publications.json (${err.message})`;
+  } catch {
+    hideSection("publications");
   }
 }
 
@@ -150,7 +158,10 @@ async function renderRepos() {
   try {
     pinned = await (await fetch("pinned.json", { cache: "no-cache" })).json();
   } catch {
-    container.textContent = "could not load pinned.json";
+    pinned = [];
+  }
+  if (!pinned.length) {
+    hideSection("repos");
     return;
   }
   container.textContent = "";
@@ -219,6 +230,10 @@ async function renderAttendances() {
   const list = $("attendance-list");
   try {
     const items = await (await fetch("attendances.json", { cache: "no-cache" })).json();
+    if (!items.length) {
+      hideSection("attendances");
+      return;
+    }
     list.textContent = "";
     items.sort((a, b) => (b.year || 0) - (a.year || 0));
     for (const it of items) {
@@ -246,8 +261,39 @@ async function renderAttendances() {
       li.appendChild(text);
       list.appendChild(li);
     }
-  } catch (err) {
-    list.textContent = `could not load attendances.json (${err.message})`;
+  } catch {
+    hideSection("attendances");
+  }
+}
+
+/* ---------- blog (from posts.json, rendered by post.html) ---------- */
+async function renderBlog() {
+  const list = $("blog-list");
+  try {
+    const posts = await (await fetch("posts.json", { cache: "no-cache" })).json();
+    if (!posts.length) {
+      hideSection("blog");
+      return;
+    }
+    list.textContent = "";
+    posts.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+    for (const p of posts) {
+      const li = el("li");
+      const text = el("div", "pub-text");
+      const title = el("a", "pub-title", p.title);
+      title.href = `post.html?p=${encodeURIComponent(p.slug)}`;
+      text.appendChild(title);
+
+      const detail = el("span", "pub-detail");
+      detail.innerHTML =
+        `<span class="pub-year">${p.date || ""}</span>` +
+        (p.description ? ` · ${escapeHtml(p.description)}` : "");
+      text.appendChild(detail);
+      li.appendChild(text);
+      list.appendChild(li);
+    }
+  } catch {
+    hideSection("blog");
   }
 }
 
@@ -280,4 +326,5 @@ renderAbout();
 renderPublications();
 renderRepos();
 renderAttendances();
+renderBlog();
 watchToc();
