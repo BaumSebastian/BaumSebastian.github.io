@@ -1,7 +1,21 @@
 {
   "source": "ORCID",
-  "updated": "2026-10-12T14:15:14+00:00",
+  "updated": "2026-10-19T11:56:05+00:00",
   "publications": [
+    {
+      "title": "Semantic-Driven Feature Identification In Software Variants Using Transformers",
+      "authors": "Johannes Stümpfle, Sebastian Baum, Jonathan Fuss, Lennard Hettich, Nasser Jazdi, Michael Weyrich",
+      "venue": "Lecture Notes in Computer Science",
+      "year": 2027,
+      "url": "https://doi.org/10.1007/978-3-032-40763-4_21"
+    },
+    {
+      "title": "The False Consensus Trap in Interdisciplinary Data-Driven Engineering Research Projects",
+      "authors": "Sebastian Baum, Patrik Michalski, Birgit Vogel-Heuser, Agnes Koschmider, Nasser Jazdi, Michael Weyrich",
+      "venue": "2026 IEEE 31st International Conference on Emerging Technologies and Factory Automation (ETFA)",
+      "year": 2026,
+      "url": "https://doi.org/10.1109/ETFA68377.2026.11725061"
+    },
     {
       "title": "Statistical Analysis of Simulation-to-Reality Deviation in Deep Drawing with a Benchmark Dataset",
       "authors": "Sebastian Baum, Pascal Heinzelmann, Philipp Clauß, Mathias Liewald, Michael Weyrich",
