@@ -10,5 +10,9 @@
   {
     "repo": "BaumSebastian/Obisidan-Templates",
     "icon": "https://raw.githubusercontent.com/BaumSebastian/BaumSebastian.github.io/refs/heads/main/icons/obsidian.png"
+  },
+  {
+    "repo": "BaumSebastian/Learn-Python-On-Mars",
+    "icon": "https://raw.githubusercontent.com/BaumSebastian/BaumSebastian.github.io/refs/heads/main/icons/learn_python.png"
   }
 ]
